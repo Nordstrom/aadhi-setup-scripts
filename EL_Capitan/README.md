@@ -1,3 +1,4 @@
+Prerequisites of installing aadhi:
 
 __Step 1:__ Install rbenv and rbenv-gemset using the below command
 
@@ -25,7 +26,7 @@ __Step 5:__ Set the global version of Ruby to be used in all shells by writing t
             rbenv global 2.2.3
 
 
- __Aadhi:__
+ __Aadhi Setup Steps:__
  
 __Step 1:__ Install rbenv(follow the above mentioned steps)
 
