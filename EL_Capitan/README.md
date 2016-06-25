@@ -49,4 +49,4 @@ To set root password, run
             Remove test database and access to it? [Y/n] - type n
             Reload privilege tables now? [Y/n] - type n
  
-Simply press enter whenever you get prompt after mysql setup. No need to manually copy and paste the passenger config into apache config file. The shell script will take care of it.
+Simply press enter whenever you get prompt after mysql setup. 
