@@ -1,41 +1,32 @@
-__Step 1:__ Do the following
 
-          rvm implode
-          sudo rm -rf ~/.rvm
           
-__Step 2:__ Navigate to home directory(cd ~) and remove all the reference of rvm from the below files
-
-          .bashrc
-          .bash_profile
-          .profile
-          
-__Step 3:__ Update and upgrade brew by running below command
+__Step 1:__ Update and upgrade brew by running below command
 
           brew update
           brew upgrade
           
-__Step 4:__ Install rbenv and rbenv-gemset using the below command
+__Step 2:__ Install rbenv and rbenv-gemset using the below command
 
           brew install rbenv
           brew install ruby-buld
           brew install rbenv-gemset
            
-__Step 5:__ Run the below command to add rbenv to $PATH
+__Step 3:__ Run the below command to add rbenv to $PATH
 
           echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
           echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
           
-__Step 6:__ reload bash profile
+__Step 4:__ reload bash profile
 
            . ~/.bash_profile 
            
 (dot space ~/profile)
 
-__Step 7:__ Install latest ruby version using rbenv. The below command will take around 5mins to install the specified ruby version
+__Step 5:__ Install latest ruby version using rbenv. The below command will take around 5mins to install the specified ruby version
 
             rbenv install 2.2.0
             
-__Step 8:__ Set the global version of Ruby to be used in all shells by writing the version name to the ~/.rbenv/version file. This version can be overridden by an application-specific .ruby-version file, or by setting the RBENV_VERSION environment variable.
+__Step 6:__ Set the global version of Ruby to be used in all shells by writing the version name to the ~/.rbenv/version file. This version can be overridden by an application-specific .ruby-version file, or by setting the RBENV_VERSION environment variable.
 
             rbenv global 2.2.0
 
