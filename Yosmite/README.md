@@ -35,7 +35,7 @@ __Step 6:__ Set the global version of Ruby to be used in all shells by writing t
  
 __Step 1:__ Install rbenv(follow the above mentioned steps)
 
-__Step 2:__ Clone - git clone https://github.com/gkexplore/AadhiSetup.git
+__Step 2:__ Clone - git clone https://github.com/Nordstrom/aadhi-setup-scripts.git
 
 __Step 3:__ Navigate to AadhiSetup and run -> sh setup_aadhi.sh (add proxy settings in proxy_setup.sh file if it is required to clone github projects)
 
