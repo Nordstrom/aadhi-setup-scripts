@@ -126,6 +126,9 @@ function configure_apache
   cd /private/etc/apache2/other/
   echo "$PASSWORD" | sudo -S chmod -R 777 /private/etc/apache2/other/ 
   echo "$PASSWORD" | sudo -S sed -i -e "s/<user_name>/$USER/g" /private/etc/apache2/other/passenger.conf
+  RAILS_ENV=production bin/rake assets:precompile
+  brew install memcached
+  brew services restart memcached
   brew info passenger
   sudo /usr/local/bin/passenger-config validate-install
   sudo apachectl -k restart

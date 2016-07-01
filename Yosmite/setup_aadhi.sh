@@ -121,6 +121,9 @@ function configure_apache
   echo "$PASSWORD" | sudo -S chmod -R 777 /private/etc/apache2/extra/ 
   echo "$PASSWORD" | sudo -S  mv "httpd-vhosts-$RUBY_MANAGER.conf" httpd-vhosts.conf
   echo "$PASSWORD" | sudo -S sed -i -e "s/<user_name>/$USER/g" /private/etc/apache2/extra/httpd-vhosts.conf
+  RAILS_ENV=production bin/rake assets:precompile
+  brew install memcached
+  brew services restart memcached
   sudo apachectl -k restart
   open http://localhost
   sleep 5
