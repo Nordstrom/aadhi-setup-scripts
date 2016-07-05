@@ -51,3 +51,10 @@ To set root password, run
             Reload privilege tables now? [Y/n] - type n
  
 Simply press enter whenever you get prompt after mysql setup. 
+
+__Step 6:__ What would you like to validate?
+Use <space> to select.
+If the menu doesn't display correctly, press '!'
+ 
+   ⬢  Passenger itself
+ ‣ ⬢  Apache
