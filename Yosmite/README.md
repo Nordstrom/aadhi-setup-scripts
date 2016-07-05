@@ -57,5 +57,6 @@ Use <space> to select.
 If the menu doesn't display correctly, press '!'
  
    ⬢  Passenger itself
+   
  ‣ ⬢  Apache
 
