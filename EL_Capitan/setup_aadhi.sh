@@ -20,10 +20,7 @@ function install_rvm_or_rbenv
       brew install rbenv-gemset
     elif [[ $RUBY_MANAGER == *".rvm"* ]]
     then
-      RUBY_VERSION=`rvm list`
-      RUBY_MANAGER="rvm"
-    else
-      echo "Please install rvm or rbenv in your machine!!!"
+      echo "It seems that you have rvm in your machine. Please install rbenv and run the setup script again!!!"
       exit 1
   fi
 
@@ -31,26 +28,16 @@ function install_rvm_or_rbenv
     then
         if [[ $RUBY_VERSION == *"2.2.3"* ]]
           then
-           echo "Expected ruby version found!!!"
-           #rbenv global 2.2.0            
+           echo "Expected ruby version found!!!"        
            rbenv-gemset create 2.2.3 aadhi
         else
-           rbenv install 2.2.3
-           #rbenv global 2.2.0            
+           rbenv install 2.2.3          
            rbenv-gemset create 2.2.3 aadhi
         fi
   elif [[ $RUBY_MANAGER == "rvm" ]]
   then
-       if [[$RUBY_VERSION == *"2.2.0"*]]
-          then
-           echo "Expected ruby version found!!!"
-           rvm use 2.2.0
-           rvm gemset create aadhi
-        else
-          rvm install 2.2.0
-          rvm use 2.2.0
-          rvm gemset create aadhi
-        fi
+    echo "It seems that you have rvm in your machine. Please install rbenv and run the setup script again!!!"
+    exit 1
   fi 
 }
         
