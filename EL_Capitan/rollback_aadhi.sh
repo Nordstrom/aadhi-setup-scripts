@@ -27,25 +27,17 @@ function remove_aadhi_gemset
       RUBY_MANAGER="rbenv"
     elif [[ $RUBY_MANAGER == *".rvm"* ]]
     then
-      RUBY_VERSION=`rvm list`
-      RUBY_MANAGER="rvm"
+      echo "It seems, Aadhi is not installed or already removed from your machine!!!"
     else
-      echo "Please install rvm or rbenv in your machine!!!"
-      exit 1
+      echo "It seems, Aadhi is not installed or already removed from your machine!!!"
+    exit 1
   fi
 
   if [[ $RUBY_MANAGER == "rbenv" ]]
     then
-        if [[ $RUBY_VERSION == *"2.2.0"* ]]
+        if [[ $RUBY_VERSION == *"2.2.3"* ]]
           then       
-           rbenv-gemset delete 2.2.0 aadhi
-        fi
-  elif [[ $RUBY_MANAGER == "rvm" ]]
-  then
-       if [[$RUBY_VERSION == *"2.2.0"*]]
-          then
-           rvm use 2.2.0
-           rvm gemset delete aadhi
+           rbenv-gemset delete 2.2.3 aadhi
         fi
   fi 
 }
