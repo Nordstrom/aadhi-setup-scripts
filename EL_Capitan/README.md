@@ -19,11 +19,11 @@ __Step 3:__ reload bash profile
 
 __Step 4:__ Install latest ruby version using rbenv. The below command will take around 5mins to install the specified ruby version
 
-            rbenv install 2.2.3
+            rbenv install 2.3.1
             
 __Step 5:__ Set the global version of Ruby to be used in all shells by writing the version name to the ~/.rbenv/version file. This version can be overridden by an application-specific .ruby-version file, or by setting the RBENV_VERSION environment variable.
 
-            rbenv global 2.2.3
+            rbenv global 2.3.1
 
 
  __Aadhi Setup Steps:__

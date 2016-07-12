@@ -35,9 +35,9 @@ function remove_aadhi_gemset
 
   if [[ $RUBY_MANAGER == "rbenv" ]]
     then
-        if [[ $RUBY_VERSION == *"2.2.3"* ]]
+        if [[ $RUBY_VERSION == *"2.3.1"* ]]
           then       
-           rbenv-gemset delete 2.2.3 aadhi
+           rbenv-gemset delete 2.3.1 aadhi
         fi
   fi 
 }

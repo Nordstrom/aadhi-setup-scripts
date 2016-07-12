@@ -26,13 +26,13 @@ function install_rvm_or_rbenv
 
   if [[ $RUBY_MANAGER == "rbenv" ]]
     then
-        if [[ $RUBY_VERSION == *"2.2.3"* ]]
+        if [[ $RUBY_VERSION == *"2.3.1"* ]]
           then
            echo "Expected ruby version found!!!"        
-           rbenv-gemset create 2.2.3 aadhi
+           rbenv-gemset create 2.3.1 aadhi
         else
-           rbenv install 2.2.3          
-           rbenv-gemset create 2.2.3 aadhi
+           rbenv install 2.3.1          
+           rbenv-gemset create 2.3.1 aadhi
         fi
   elif [[ $RUBY_MANAGER == "rvm" ]]
   then
@@ -60,7 +60,7 @@ function clone_and_install_aadhi
   echo "$PASSWORD" | sudo -S chmod -R 7777 .ruby-version
   echo "$PASSWORD" | sudo -S touch .ruby-gemset
   echo "$PASSWORD" | sudo -S chmod -R 7777 .ruby-gemset
-  echo "$PASSWORD" | sudo -S echo '2.2.3' >> .ruby-version
+  echo "$PASSWORD" | sudo -S echo '2.3.1' >> .ruby-version
   echo "$PASSWORD" | sudo -S echo 'aadhi' >> .ruby-gemset
   gem install bundler
   brew install mysql

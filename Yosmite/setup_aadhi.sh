@@ -26,13 +26,13 @@ function install_rvm_or_rbenv
 
   if [[ $RUBY_MANAGER == "rbenv" ]]
     then
-        if [[ $RUBY_VERSION == *"2.2.3"* ]]
+        if [[ $RUBY_VERSION == *"2.3.1"* ]]
           then
            echo "Expected ruby version found!!!"        
-           rbenv-gemset create 2.2.3 aadhi
+           rbenv-gemset create 2.3.1 aadhi
         else
-           rbenv install 2.2.3          
-           rbenv-gemset create 2.2.3 aadhi
+           rbenv install 2.3.1          
+           rbenv-gemset create 2.3.1 aadhi
         fi
   elif [[ $RUBY_MANAGER == "rvm" ]]
   then
