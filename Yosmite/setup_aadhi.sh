@@ -75,8 +75,9 @@ function install_and_setup_mysql
   mysql.server start
   mysql_secure_installation
   echo "$PASSWORD" | sudo -S chmod -R 777 /var/www/aadhi/db
-  rake db:drop db:create db:migrate RAILS_ENV=development
-  RAILS_ENV=production bin/rake assets:precompile
+  bin/rails db:environment:set RAILS_ENV=production 
+  rails db:drop db:create db:migrate RAILS_ENV=production DISABLE_DATABASE_ENVIRONMENT_CHECK=1
+  RAILS_ENV=production bin/rails assets:precompile 
 }
 
 function install_apache_module
