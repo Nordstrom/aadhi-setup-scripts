@@ -5,9 +5,9 @@ CURRENT_PATH=`pwd`
 echo Password: 
 read -s PASSWORD
 gem install bundler
-rbenv rehash
+#rbenv rehash
 RUBY_VERSION=""
-RUBY_MANAGER=`which ruby`
+RUBY_MANAGER="rbenv"
 
 
 function install_rvm_or_rbenv
@@ -56,17 +56,17 @@ function clone_and_install_aadhi
   echo "$PASSWORD" | sudo -S chmod -R 777 /var/www
   sh proxy_setup_install.sh
   cd /var/www/aadhi
-  echo "$PASSWORD" | sudo -S touch .ruby-version
-  echo "$PASSWORD" | sudo -S chmod -R 7777 .ruby-version
-  echo "$PASSWORD" | sudo -S touch .ruby-gemset
-  echo "$PASSWORD" | sudo -S chmod -R 7777 .ruby-gemset
-  echo "$PASSWORD" | sudo -S echo '2.3.1' >> .ruby-version
-  echo "$PASSWORD" | sudo -S echo 'aadhi' >> .ruby-gemset
+  #echo "$PASSWORD" | sudo -S touch .ruby-version
+  #echo "$PASSWORD" | sudo -S chmod -R 7777 .ruby-version
+  #echo "$PASSWORD" | sudo -S touch .ruby-gemset
+  #echo "$PASSWORD" | sudo -S chmod -R 7777 .ruby-gemset
+  #echo "$PASSWORD" | sudo -S echo '2.3.1' >> .ruby-version
+  #echo "$PASSWORD" | sudo -S echo 'aadhi' >> .ruby-gemset
   gem install bundler
   brew install mysql
   gem install mysql -v 2.9.1
   bundle install
-  rbenv rehash
+  #rbenv rehash
 }
 
 function install_and_setup_mysql
@@ -126,7 +126,7 @@ function configure_apache
   open http://localhost
 }
 
-install_rvm_or_rbenv
+#install_rvm_or_rbenv
 clone_and_install_aadhi
 install_and_setup_mysql
 install_apache_module
