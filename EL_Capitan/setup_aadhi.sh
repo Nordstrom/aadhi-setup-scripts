@@ -5,41 +5,8 @@ CURRENT_PATH=`pwd`
 echo Password: 
 read -s PASSWORD
 gem install bundler
-#rbenv rehash
 RUBY_VERSION=""
-RUBY_MANAGER="rbenv"
-
-
-function install_rvm_or_rbenv
-{
-  echo "*******************************Installing rvm or rbenv********************************"
-  if [[ $RUBY_MANAGER == *".rbenv"* ]]
-    then
-      RUBY_VERSION=`rbenv versions`
-      RUBY_MANAGER="rbenv"
-      brew install rbenv-gemset
-    elif [[ $RUBY_MANAGER == *".rvm"* ]]
-    then
-      echo "It seems that you have rvm in your machine. Please install rbenv and run the setup script again!!!"
-      exit 1
-  fi
-
-  if [[ $RUBY_MANAGER == "rbenv" ]]
-    then
-        if [[ $RUBY_VERSION == *"2.3.1"* ]]
-          then
-           echo "Expected ruby version found!!!"        
-           rbenv-gemset create 2.3.1 aadhi
-        else
-           rbenv install 2.3.1          
-           rbenv-gemset create 2.3.1 aadhi
-        fi
-  elif [[ $RUBY_MANAGER == "rvm" ]]
-  then
-    echo "It seems that you have rvm in your machine. Please install rbenv and run the setup script again!!!"
-    exit 1
-  fi 
-}
+RUBY_MANAGER=ruby
         
 function clone_and_install_aadhi
 {
@@ -56,17 +23,10 @@ function clone_and_install_aadhi
   echo "$PASSWORD" | sudo -S chmod -R 777 /var/www
   sh proxy_setup_install.sh
   cd /var/www/aadhi
-  #echo "$PASSWORD" | sudo -S touch .ruby-version
-  #echo "$PASSWORD" | sudo -S chmod -R 7777 .ruby-version
-  #echo "$PASSWORD" | sudo -S touch .ruby-gemset
-  #echo "$PASSWORD" | sudo -S chmod -R 7777 .ruby-gemset
-  #echo "$PASSWORD" | sudo -S echo '2.3.1' >> .ruby-version
-  #echo "$PASSWORD" | sudo -S echo 'aadhi' >> .ruby-gemset
   gem install bundler
   brew install mysql
   gem install mysql -v 2.9.1
   bundle install
-  #rbenv rehash
 }
 
 function install_and_setup_mysql
@@ -126,7 +86,6 @@ function configure_apache
   open http://localhost
 }
 
-#install_rvm_or_rbenv
 clone_and_install_aadhi
 install_and_setup_mysql
 install_apache_module
