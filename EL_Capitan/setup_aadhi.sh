@@ -6,7 +6,7 @@ echo Password:
 read -s PASSWORD
 gem install bundler
 RUBY_VERSION=""
-RUBY_MANAGER="rbenv"
+RUBY_MANAGER="ruby"
         
 function clone_and_install_aadhi
 {
